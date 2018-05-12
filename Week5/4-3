@@ -1,0 +1,63 @@
+import java.math.BigDecimal;
+import java.text.NumberFormat;
+import java.util.Scanner;
+
+public class TestScoreApp
+{
+    public static void main(String[] args)
+    {
+        // display operational messages
+        System.out.println("Please enter test scores that range from 0 to 100.");
+        //System.out.println("To end the program enter 999.");
+        System.out.println();  // print a blank line
+
+        // initialize variables and create a Scanner object
+               String moreOptions = "y";
+               Scanner sc = new Scanner(System.in);
+
+        // get a series of test scores from the user
+        do{
+             int scoreTotal = 0;
+             int scoreCount = 0;
+             int testScore = 0;
+             int minimumScore = 100;
+             int maximumScore = 99;
+      
+            // get the input from the user
+            System.out.print("Enter the number of test scores to be entered: ");
+            int scoreNumber = sc.nextInt();
+            for( int i = 0; i < scoreNumber; i++){
+                System.out.print("Enter score " + i + ": ");
+                testScore = sc.nextInt();
+            // accumulate score count and score total
+            if (testScore <= 100)
+            {
+                scoreCount += 1;
+                scoreTotal += testScore;
+                 minimumScore = Math.min(minimumScore, testScore);
+                maximumScore = Math.max(maximumScore, testScore);
+            }
+            else if (testScore != 999){
+                System.out.println("Invalid entry, not counted");
+            i--;
+        }
+            }
+        
+
+        // display the score count, score total, and average score
+        BigDecimal averageScore = new BigDecimal(scoreTotal / scoreCount);
+        NumberFormat number = NumberFormat.getNumberInstance();
+        number.setMaximumFractionDigits(1);
+        String message = "\n" +
+                         "Score count:   " + scoreCount + "\n"
+                       + "Score total:   " + scoreTotal + "\n"
+                       + "Average score: " + averageScore + "\n"
+                + "Minimum score: " + minimumScore + "\n"
+                + "Maximum score: " + maximumScore + "\n";
+        System.out.println(message);
+        System.out.println("Enter more scores? (y/n): ");
+        moreOptions = sc.next();
+        
+        } while (moreOptions.equalsIgnoreCase("y"));
+    }
+}
