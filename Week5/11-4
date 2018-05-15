@@ -1,0 +1,101 @@
+public class CardDeckApp
+{
+    public static void main(String[] args)
+    {
+     String[] cards = loadCards();
+     printCards(cards);
+     cards = shuffleCards(cards);
+     dealCards(cards);
+    }
+    
+    static String[] loadCards(){
+        
+        //Suits: D = diamonds, H = hearts, S = Spades, C = Clubs.
+        String[] CardSuit = {"H", "D", "S", "C"};
+        String[] Cards = new String[52];
+        int j = 0;
+        int max = 12;
+        int c = 1;
+        for (int i = 0; i<=3; i++){
+            
+            for ( ;j<=max; j++ ){
+                Cards[j] = CardSuit[i]+(c++);
+            }
+            max=j+12;
+            c=1;
+        }
+        return Cards;
+    }
+    
+   //cards before shuffling
+    static void printCards(String[] Cards){
+        String[] deck = Cards;
+        int j = 0;
+        int max = 12;
+        String s="";
+        System.out.println("Deck before shuffling");
+        for (int i = 0; i<=3; i++){
+            for (; j<=max; j++ ){
+                s = s+deck[j]+" ";
+            }
+            max = j+12;
+            System.out.println(s);
+            s="";
+        }
+             
+            }
+    
+    //cards after shuffling
+    static String[] shuffleCards(String[] Cards){
+        String[] deck = Cards;
+        int count = 0;
+        while(count<=99){
+            //pick a card between 1 and 51 randomly each time it shuffles
+            int random = (int)((Math.random()*50)+1);
+            if (random<52){
+                String temp = deck[random];
+                while(random>0){
+                    deck[random] = deck[random-1];
+                    random--;
+                }
+                deck[0] = temp;
+            }
+            count++;
+            
+        }
+        System.out.println("Deck after shuffling");
+        for(int i=0;i<deck.length;i++){
+            System.out.println(deck[i]);
+        }
+        return deck;
+    }
+    //deal cards to the players and "show" them
+    static void dealCards(String[] Cards){
+        String[] deck = Cards;
+        String [][] hands  = new String[4][5];
+        int r = 0, count=0; //r, c represent columns
+        while(r<hands.length){
+            int c=0;
+            while (c<5){
+                hands[r][c] = deck[count];
+                c++;
+                count++;
+            }
+            
+            r++;
+        }
+        
+        System.out.println("\nPrinting the hands");
+                for(int j = 0; j < hands.length; j++) {
+            //print player number using the loop variable
+            System.out.println("Player " + (j + 1) + ": ");
+            for(int k = 0; k < hands[j].length; k++) {
+                System.out.print(hands[j][k] + " ");
+            }
+            System.out.println("\n");
+
+        }
+    }
+}
+    
+
