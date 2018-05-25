@@ -1,0 +1,31 @@
+package executabledoc;
+
+
+import java.lang.reflect.Executable;
+
+//this is an example of an executable document, where you can document how your code works.
+public class executableDoc
+{
+    private static int order = TestDataConstants.ORDER_FOR_TESTING;
+    private static int dimensions = DIMENSIONS_FOR_TESTING;
+
+    private static ExecutableDoc executableDoc;
+
+    @Before
+    public void setup()
+    {
+        executableDoc = new ExecutableDoc(DIMENSIONS_FOR_TESTING);
+    }
+    @After
+    public void tearDown()
+    {
+        executableDoc = null;
+    }
+
+    @Test
+    public void testAdjacencyMatrix()
+    {
+        assertEquals (dimensions, executableDoc.getDimensions() );
+        assertTrue(executableDoc.getMatrix() instanceof int[][]);
+    }
+}
