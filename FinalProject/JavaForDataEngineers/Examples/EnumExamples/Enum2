@@ -1,0 +1,21 @@
+package com.vanessaluft.enExample;
+
+
+//this is an example of enumeration
+
+public enum MonthEnum
+{
+    UNKNOWN,
+    JANUARY,
+    FEBRUARY,
+    MARCH,
+    APRIL,
+    MAY,
+    JUNE,
+    JULY,
+    AUGUST,
+    SEPTEMBER,
+    OCTOBER,
+    NOVEMBER,
+    DECEMBER
+}
