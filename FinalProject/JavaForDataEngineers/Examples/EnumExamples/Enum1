@@ -1,0 +1,34 @@
+package com.vanessaluft.enExample;
+
+
+//this is an example of enumeration
+
+public class enumExample
+{
+    private MonthEnum monthEnum;
+    private String holyday;
+
+    public enumExample()
+    {
+
+    }
+
+    public enumExample(MonthEnum monthEnum, String holyday)
+    {
+        this.monthEnum = monthEnum;
+        this.holyday = holyday;
+    }
+
+    public MonthEnum getMonthEnum()
+    {
+        return monthEnum;
+    }
+
+    public void setMonthEnum(MonthEnum monthEnum)
+    {
+        this.monthEnum = monthEnum;
+    }
+    public String getHolyday() { return holyday;}
+
+    public void setHolyday(String holyday) {this.holyday = holyday;}
+}
