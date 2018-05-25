@@ -1,0 +1,21 @@
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
+
+//this is an example of a test using string buffer
+public class bufferExample
+{
+    @Test
+    public void testUsingStringBuffer()
+    {
+        StringBuffer stringBuffer = new StringBuffer("You ");
+        stringBuffer.append("are ");
+        stringBuffer.append("ready ");
+        stringBuffer.append("for ");
+        stringBuffer.append("tonight");
+
+        String constructedString = stringBuffer.toString();
+        assertEquals("You are ready for tonight", constructedString);
+    }
+}
