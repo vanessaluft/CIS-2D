@@ -17,10 +17,13 @@ public class GroceryList {
         
         //prints out essential grocery list
         System.out.println("This is what I need for tonight: " + essentials);
+        
         //prints out ingredients for brigadeiro
         System.out.println("This is what I need for the brigadeiro: " + brigadeiro);
+        
         //add an item to the list
         essentials.add("pepsi");
+        
         //add both lists together
         essentials.addAll(brigadeiro);
         System.out.println("Grocery List: " + essentials);
