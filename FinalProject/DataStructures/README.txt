@@ -1,6 +1,6 @@
-							Data Structures 
+						Data Structures 
 
-						What are Data Structures?
+					What are Data Structures?
 
 	In computer science a data structure is a particular way of collecting and organizing data.
 	Choosing the right data structure impacts the efficiency of your program. The collection of data can be from many 
@@ -50,9 +50,9 @@ order.
 	Queue
  	A queue is a linear list in which items are added at one end and deleted from the other end.
 	Elements of queue:
-	Add() – used to add elements to the end
-	Peek() – returns a copy of the first element
-	Remove() – removes the top element; error if empty
-	Poll() – removes from the top; returns null if the queue is empty
+	Add() â€“ used to add elements to the end
+	Peek() â€“ returns a copy of the first element
+	Remove() â€“ removes the top element; error if empty
+	Poll() â€“ removes from the top; returns null if the queue is empty
 
 
