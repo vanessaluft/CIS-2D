@@ -1,0 +1,21 @@
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Iterator;
+
+//this is an example of iterator
+public class IteratorExample {
+
+   
+    public static void main(String[] args) {
+        Collection collection = Arrays.asList("red", "orange", "yellow", "green", "blue", "indigo", "violet");
+        //creating an iterator object. Giving a name because an iterator method returns an iterator object
+        Iterator  iterator = collection.iterator();
+        //hasNext checks to see if there is another element and next actually
+        //gets a copy of the element and moves the pointer to the next element.
+        while(iterator.hasNext())
+        {
+            System.out.println(iterator.next());  
+        }
+    }
+    
+}
