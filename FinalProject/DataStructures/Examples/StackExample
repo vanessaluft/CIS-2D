@@ -1,0 +1,27 @@
+//this is a stack example
+
+import java.util.Stack;
+
+public class stackExample {
+
+   
+    public static void main(String[] args) {
+      
+        Stack stack = new Stack();
+        //for loop
+        //it will count from 1 to 10 and then prints out the message LIFT-OFF
+        for (int i = 1; i <= 10; i++) {
+            //add an element
+            stack.push(i);
+            
+        }
+        //empty is a method that checks and see if I'm at the last element
+        while(!stack.empty()) {
+            //removes element from the top
+            System.out.print(stack.pop());
+            System.out.print(",");
+               }
+        System.out.println("LIFT-OFF");
+    }
+    
+}
